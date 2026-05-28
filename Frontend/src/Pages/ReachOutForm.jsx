@@ -2,9 +2,9 @@ import { validateYupSchema } from "formik"
 import Form from "../Components/Form"
 import * as Yup from "yup"
 import toast from "react-hot-toast";
-import { data } from "react-router-dom";
+import { data, redirect, useNavigate } from "react-router-dom";
 export default function ReachOutForm() {
-
+    const navigate = useNavigate();
     const handleReachOut = async (values) => {
         try {
             const response = await fetch(
@@ -20,8 +20,10 @@ export default function ReachOutForm() {
             const data = await response.json();
             if (data.success) {
                 toast.success(data.message);
+                navigate("/");
             } else {
-                toast.error(data.message)
+                toast.error(data.message);
+                navigate("/");
             }
         } catch (e) {
             console.log(e);
