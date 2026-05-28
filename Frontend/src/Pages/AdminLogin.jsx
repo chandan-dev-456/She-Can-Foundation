@@ -12,7 +12,7 @@ export default function AdminLogin() {
             toast.success(message);
             navigate("/dashboard");
         }catch(e){
-            toast.error("Server Error");
+           toast.error(e.message);
         }
     }
     const {handleAdminLogin} = useContext(AuthContext);
