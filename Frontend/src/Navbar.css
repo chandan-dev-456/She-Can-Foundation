@@ -1,0 +1,118 @@
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+.overlay {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: rgba(0,0,0,0.5);
+}
+
+.content {
+  max-width: 700px;
+}
+
+.content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 2.5rem;
+  }
+}
+.nav-custom {
+  position: relative;
+
+  color: white !important;
+
+  font-size: 1.1rem;
+
+  transition: color 0.3s ease;
+}
+
+.nav-custom::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: rgb(72, 5, 5);
+
+  transition: width 0.3s ease;
+}
+
+.nav-custom:hover {
+  color: firebrick !important;
+}
+
+.nav-custom:hover::after {
+  width: 100%;
+}
+.brand {
+
+  font-family: "Parisienne";
+
+  font-size: 4rem;
+
+  font-weight: 600;
+
+  color: #c22b76 !important;
+
+  text-decoration: none;
+
+  letter-spacing: 5px;
+
+  transition: all 0.3s ease;
+
+  text-shadow:
+    0 0 10px rgba(255, 105, 180, 0.3);
+
+}
+
+.brand:hover {
+
+  color: #ff85c1 !important;
+
+  transform: scale(1.03);
+
+}
