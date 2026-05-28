@@ -6,7 +6,7 @@ export const AuthProvider = ({ children }) => {
     const handleAdminLogin = async (formdata) => {
         try {
             const response = await fetch(
-                "import.meta.env.VITE_API_URL/admin",
+                `${import.meta.env.VITE_API_URL}/admin`,
                 {
                     method: "POST",
                     headers: {

@@ -8,7 +8,7 @@ export default function ReachOutForm() {
     const handleReachOut = async (values) => {
         try {
             const response = await fetch(
-                "import.meta.env.VITE_API_URL/form",
+                `${import.meta.env.VITE_API_URL}/form`,
                 {
                     method: "POST",
                     headers: {

@@ -13,7 +13,7 @@ export default function AdminDashBoard() {
             try {
                 const token = localStorage.getItem("token");
                 const response = await fetch(
-                    "import.meta.env.VITE_API_URL/dashboard",
+                    `${import.meta.env.VITE_API_URL}/dashboard`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`

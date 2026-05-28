@@ -10,7 +10,7 @@ export default function Message() {
             try {
                 const token = localStorage.getItem("token");
                 const response = await fetch(
-                    `import.meta.env.VITE_API_URL/message/${id}`,
+                    `${import.meta.env.VITE_API_URL}/message/${id}`,
                     {
                         headers: { Authorization: `Bearer ${token}` }
                     }
@@ -32,7 +32,7 @@ export default function Message() {
         try {
             const token = localStorage.getItem("token");
             const response = await fetch(
-                `import.meta.env.VITE_API_URL/message/${id}`,
+                `${import.meta.env.VITE_API_URL}/message/${id}`,
                 {
                     method: "DELETE",
                     headers: { Authorization: `Bearer ${token}` }
@@ -54,7 +54,7 @@ export default function Message() {
         try {
             const token = localStorage.getItem("token");
             const response = await fetch(
-                `import.meta.env.VITE_API_URL/message/${id}`,
+                `${import.meta.env.VITE_API_URL}/message/${id}`,
                 {
                     method: "PATCH",
                     headers: { Authorization: `Bearer ${token}` }
