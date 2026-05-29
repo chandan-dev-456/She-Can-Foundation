@@ -122,13 +122,9 @@ export default function Message() {
                             <button className="btn btn-danger px-4" onClick={handleDelete}>
                                 Delete
                             </button>
-
                         </div>
-
                     </div>
-                    ?
                 </div>
-
             </div>
         </>
     );
