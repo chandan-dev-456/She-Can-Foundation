@@ -38,13 +38,13 @@ export default function AdminDashBoard() {
             }
             catch (e) {
                 console.log(e);
+            }finally {
+                setLoading(false);
             }
         };
         fetchMsg();
     }, []);
 
-    return (
-        <>
             if (loading) {
                 return (
                     <div className="container-fluid bg-light min-vh-100 d-flex flex-column justify-content-center align-items-center">
@@ -53,6 +53,7 @@ export default function AdminDashBoard() {
                     </div>
                 );
             }
+            return(
             <div className="container-fluid bg-light min-vh-100 px-0">
                 <div className="container p-0">
                     <div className="row g-4 mb-4">
@@ -118,6 +119,5 @@ export default function AdminDashBoard() {
                     </div>
                 </div>
             </div>
-        </>
-    );
+            );
 }
