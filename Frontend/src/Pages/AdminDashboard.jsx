@@ -6,6 +6,7 @@ export default function AdminDashBoard() {
     const [countUnread, setCountUnread] = useState(0);
     const [countRead, setCountRead] = useState(0);
     const [messages, setMessages] = useState([]);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -23,6 +24,7 @@ export default function AdminDashBoard() {
                 const data = await response.json();
                 console.log(data);
                 setMessages(data.messages);
+                setLoading(false);
                 const totalMessages = data.messages.length;
                 const unreadMessages =
                     data.messages.filter(
@@ -43,6 +45,14 @@ export default function AdminDashBoard() {
 
     return (
         <>
+            if (loading) {
+                return (
+                    <div className="container-fluid bg-light min-vh-100 d-flex flex-column justify-content-center align-items-center">
+                        <div className="spinner-border text-primary mb-3" role="status"></div>
+                        <h5 className="text-secondary">Loading message...</h5>
+                    </div>
+                );
+            }
             <div className="container-fluid bg-light min-vh-100 px-0">
                 <div className="container p-0">
                     <div className="row g-4 mb-4">
